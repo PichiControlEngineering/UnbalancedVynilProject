@@ -39,9 +39,10 @@ class notchFilter:
         return self.y0
     
     def getFreqResponse(self, N=5000):
-        #should really be individual frequencies tested, then compare rms of input and output
-        input = np.random.rand(N)
-        input -= np.mean(input)
+        #input is impulse to check all frequencies
+        input = np.zeros(N)
+        input[0] = 1
+        
         output = np.zeros(N)
 
         for i in range(N):
