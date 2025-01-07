@@ -1,3 +1,4 @@
+import numpy as np
 class notchFilter:
     def __init__(self, f_c, Q, f_s):
         self.f_s = f_s
@@ -35,9 +36,8 @@ class notchFilter:
 
         self.y2 = self.y1
         self.y1 = self.y0
-
         return self.y0
-    
+
     def getFreqResponse(self, N=5000):
         #input is impulse to check all frequencies
         input = np.zeros(N)
